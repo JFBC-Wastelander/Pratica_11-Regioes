@@ -1,4 +1,5 @@
 const prompt = require("prompt-sync")()
+const CRUD = require("./CRUD.js")
 while (true) {
 console.log(`Bem vindo ao cadastro de nações. Tecle:
 1- Criar uma entrada de uma nação.
@@ -10,23 +11,24 @@ console.log(`Bem vindo ao cadastro de nações. Tecle:
 let entrada = +prompt("Informe sua opção: ")
 switch (entrada) {
     case 1:
-        console.log("Entrada")
+        CRUD.criar()
         break
     case 2:
-        console.log("Listagem")
+        CRUD.listar()
         break
     case 3:
-        console.log("Deletar")
+        CRUD.deletar()
         break
     case 4:
-        console.log("Atualizar")
+        CRUD.atualizar()
         break
     case 5:
         console.log("Saindo...")
         process.exit()
         break
     default:
-        console.log("Informe um valor correto")
+        console.log(`Informe um valor correto
+        `)
         break
 }
 }
